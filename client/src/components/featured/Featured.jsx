@@ -26,11 +26,14 @@ function Featured() {
           </h1>
 
           <div className="search">
+
             <div className="searchInput">
               <img src="./img/search.png" alt="" />
               <input type="text" placeholder='Bạn muốn gì ...' onChange={(e) => setInput(e.target.value)} />
             </div>
+            
             <button onClick={handleSubmit}>Tìm kiếm</button>
+
           </div>
 
           <div className="popular">

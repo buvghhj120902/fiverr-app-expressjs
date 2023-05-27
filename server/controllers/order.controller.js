@@ -2,6 +2,7 @@ import gigModel from "../models/gig.model.js"
 import orderModel from "../models/order.model.js"
 import Stripe from 'stripe'
 
+//Create order with Stripe
 export const intent = async (req, res, next) => {
 
     const stripe = new Stripe(process.env.STRIPE)
@@ -42,7 +43,7 @@ export const intent = async (req, res, next) => {
 
 }
 
-
+//Get all orders
 export const getOders = async (req, res, next) => {
 
     try {
@@ -66,6 +67,7 @@ export const getOders = async (req, res, next) => {
 
 }
 
+//Order confirmation
 export const confirm = async (req, res, next) => {
 
     try {

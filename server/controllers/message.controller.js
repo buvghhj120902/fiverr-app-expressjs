@@ -1,7 +1,7 @@
 import conversationModel from "../models/conversation.model.js"
 import messageModel from "../models/message.model.js"
 
-
+//Create message
 export const createMessage = async (req, res, next) => {
 
     try {
@@ -21,9 +21,11 @@ export const createMessage = async (req, res, next) => {
             { id: req.body.conversationId },
             {
                 $set: {
+
                     readBySeller: req.isSeller,
                     readByBuyer: !req.isSeller,
                     lastMessage: req.body.desc
+
                 }
             },
             {
@@ -42,6 +44,7 @@ export const createMessage = async (req, res, next) => {
 
 }
 
+//Get all message
 export const getMessages = async (req, res, next) => {
 
     try {
@@ -58,6 +61,7 @@ export const getMessages = async (req, res, next) => {
 
 }
 
+//Get a message
 export const getMessage = async (req, res, next) => {
 
     try {

@@ -1,6 +1,7 @@
 import userModel from "../models/user.model.js"
 import { createError } from "../utils/error.js"
 
+//Update user
 export const updateUser = async (req, res, next) => {
 
     const userId = req.params.id
@@ -17,7 +18,7 @@ export const updateUser = async (req, res, next) => {
                 },
                 {
                     new: true
-                }
+                },
 
             )
 
@@ -40,6 +41,7 @@ export const updateUser = async (req, res, next) => {
 
 }
 
+//Get a user
 export const getUser = async (req, res, next) => {
 
     try {

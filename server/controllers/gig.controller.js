@@ -1,6 +1,7 @@
 import gigModel from "../models/gig.model.js"
 import { createError } from "../utils/error.js"
 
+//Create gig
 export const createGig = async (req, res, next) => {
 
     if (!req.isSeller) {
@@ -31,6 +32,7 @@ export const createGig = async (req, res, next) => {
     }
 }
 
+//Delete gig
 export const deleteGig = async (req, res, next) => {
 
     try {
@@ -52,6 +54,7 @@ export const deleteGig = async (req, res, next) => {
 
 }
 
+//Get a gig
 export const getGig = async (req, res, next) => {
 
     try {
@@ -73,6 +76,7 @@ export const getGig = async (req, res, next) => {
 
 }
 
+//Get all gig
 export const getGigs = async (req, res, next) => {
 
     const q = req.query
@@ -90,11 +94,20 @@ export const getGigs = async (req, res, next) => {
                 ...(q.min && { $gt: q.min }),
                 ...(q.max && { $lt: q.max })
 
-            }
+            },
 
         }),
 
-        ...(q.search && { title: { $regex: q.search, $options: "i" } })
+        ...(q.search && {
+
+            title: {
+
+                $regex: q.search,
+                $options: "i"
+
+            },
+
+        })
 
     }
 

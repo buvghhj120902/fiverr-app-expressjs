@@ -10,5 +10,4 @@ router.put("/:id", verifyToken, updateUser)
 //Get a user
 router.get("/find/:id", getUser)
 
-
 export default router

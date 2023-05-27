@@ -40,12 +40,15 @@ const CheckoutForm = () => {
             case "succeeded":
               setMessage("Payment succeeded!");
               break;
+
             case "processing":
               setMessage("Your payment is processing.");
               break;
+              
             case "requires_payment_method":
               setMessage("Your payment was not successful, please try again.");
               break;
+              
             default:
               setMessage("Something went wrong.");
               break;

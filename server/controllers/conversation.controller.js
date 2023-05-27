@@ -1,7 +1,7 @@
 import conversationModel from "../models/conversation.model.js"
 import { createError } from "../utils/error.js"
 
-
+//Add conversation
 export const addConversation = async (req, res, next) => {
 
     try {
@@ -28,6 +28,7 @@ export const addConversation = async (req, res, next) => {
 
 }
 
+//Update conversation
 export const updateConversation = async (req, res, next) => {
 
     try {
@@ -56,6 +57,7 @@ export const updateConversation = async (req, res, next) => {
 
 }
 
+//Get conversation
 export const getConversation = async (req, res, next) => {
 
     try {
@@ -75,6 +77,7 @@ export const getConversation = async (req, res, next) => {
 
 }
 
+//Get all conversations
 export const getConversations = async (req, res, next) => {
 
     try {

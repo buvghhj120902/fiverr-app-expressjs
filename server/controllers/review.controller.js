@@ -2,9 +2,8 @@ import gigModel from "../models/gig.model.js"
 import reviewModel from "../models/review.model.js"
 import { createError } from "../utils/error.js"
 
+//Create review
 export const addReview = async (req, res, next) => {
-
-
 
     if (req.isSeller) {
 
@@ -36,8 +35,8 @@ export const addReview = async (req, res, next) => {
                     $inc: {
                         totalStars: req.body.star,
                         starNumber: 1
-                    }
-                }
+                    },
+                },
 
             )
 
@@ -53,6 +52,7 @@ export const addReview = async (req, res, next) => {
 
 }
 
+//Get all reviews
 export const getReviews = async (req, res, next) => {
 
     try {
@@ -71,6 +71,7 @@ export const getReviews = async (req, res, next) => {
 
 }
 
+//Delete review
 export const deleteReview = async (req, res, next) => {
 
     try {
